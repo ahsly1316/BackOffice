@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Backoffice | Home</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body class="dashboard">
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-text">Backoffice — Panel</span>
+  </div>
+    <div class="actions">
+        <button class="logout-btn" onclick="logout()">Cerrar sesión</button>
+    </div>
+</header>
+
+<div class="container-dashboard">
+    <aside class="panel left-panel glass-card">
+        <h2>Nuevo Proyecto</h2>
+        <button class="btn-primary open-modal-btn" onclick="openCreateModal()">+ Agregar proyecto</button>
+    </aside>
+
+    <section class="panel right-panel glass-card">
+        <div class="toolbar">
+            <h2>Proyectos</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Tecnologías</th>
+                    <th>Repositorio</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="projects-table-body">
+                <tr><td colspan="6" class="card-empty">Cargando...</td></tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<div id="modal-create" class="modal hidden">
+  <div class="modal-content glass-card">
+    <h2>Nuevo Proyecto</h2>
+    <form id="create-form">
+      <div class="form-group">
+        <input id="p-name" placeholder="Título" required>
+      </div>
+      <div class="form-group">
+        <textarea id="p-desc" placeholder="Descripción"></textarea>
+      </div>
+      <div class="form-group">
+        <input id="p-tech" placeholder="Tecnologías (coma separadas)">
+      </div>
+      <div class="form-group">
+        <input id="p-repo" placeholder="Link del repositorio">
+      </div>
+      <div class="form-group">
+        <input id="p-img" placeholder="URL de la imagen (opcional)">
+      </div>
+      <div class="modal-buttons">
+        <button class="btn-primary" type="submit">Crear</button>
+        <button type="button" class="btn-close" onclick="closeCreateModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="modal-edit" class="modal hidden">
+  <div class="modal-content glass-card">
+    <h2>Editar Proyecto</h2>
+    <form id="edit-form">
+      <input type="hidden" id="edit-id">
+      <div class="form-group">
+        <input id="edit-name" placeholder="Título" required>
+      </div>
+      <div class="form-group">
+        <textarea id="edit-desc" placeholder="Descripción"></textarea>
+      </div>
+      <div class="form-group">
+        <input id="edit-tech" placeholder="Tecnologías (coma separadas)">
+      </div>
+      <div class="form-group">
+        <input id="edit-repo" placeholder="Link del repositorio">
+      </div>
+      <div class="form-group">
+        <input id="edit-img" placeholder="URL de la imagen (opcional)">
+      </div>
+      <div class="modal-buttons">
+        <button class="btn-primary" type="submit">Guardar cambios</button>
+        <button type="button" class="btn-close" onclick="closeEditModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/home.js"></script>
+</body>
+</html>
+

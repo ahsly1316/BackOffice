@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backoffice | Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth">
+  <header class="topbar">
+    <div class="brand"></div>
+  </header>
+  <main class="container">
+    <form class="form" id="loginForm" onsubmit="loginUser(event)">
+      <h1>Iniciar Sesión</h1>
+      <input id="loginEmail" type="email" placeholder="Correo electrónico" required />
+      <input id="loginPass" type="password" placeholder="Contraseña" required />
+      <button type="submit" class="btn-primary">Entrar</button>
+      <p>¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
+    </form>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
